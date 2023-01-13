@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React from 'react'
 
-const SITE_URL = process.env.SITE_URL;
+const SITE_URL = "https://mi-tie.es";
 const CommonSEO = (
     { title, description, ogType, ogImage, twImage, canonicalUrl }:
         { title: string; description: string; ogType: string; ogImage: string; twImage: string; canonicalUrl?: string; }) => {
