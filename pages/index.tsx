@@ -1,35 +1,19 @@
-import Head from 'next/head'
 import Image from 'next/image'
-import { Inter, Poppins } from '@next/font/google'
+import { Poppins } from '@next/font/google'
 import { PageSEO } from '@/components/PageSEO'
 import { OfficeInfo } from '@/components/OfficeInfo'
 import { HorizontalRule } from "@/components/HorizontalRule"
-import { GetServerSideProps } from 'next'
-import * as OfficeInfoService from "../services/OfficeInfoService";
+import { GetStaticProps } from 'next'
 import { IOffice } from "../models/office";
+import fsPromises from 'fs/promises'
+import path from 'path'
 
 const poppins = Poppins({ weight: ["400"], subsets: ["latin"] });
 const poppinsStrong = Poppins({ weight: ["900"], subsets: ["latin"] });
 
-const CACHE_TIME_IN_MIN = parseInt(process.env.CACHE_TIME_IN_MIN as string);
-let lastOfficeUpdateTimestamp: number | null = null;
-let offices: IOffice[] | null;
-
-const tryUpdateOffices = async () => {
-  try {
-    console.log("Updating offices...");
-    offices = await OfficeInfoService.updateInfo();
-    lastOfficeUpdateTimestamp = Date.now();
-  } catch (error) {
-    console.error("Error updating offices", error);
-  }
-}
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  if (!offices || !lastOfficeUpdateTimestamp || (Date.now() - lastOfficeUpdateTimestamp) / 1000 / 60 >= CACHE_TIME_IN_MIN) {
-    await tryUpdateOffices();
-  }
-
+export const getStaticProps: GetStaticProps = async (context) => {
+  const jsonData = await fsPromises.readFile(path.join(process.cwd(), "./data/offices.json"));
+  const offices = JSON.parse(jsonData.toString()) as IOffice[];
   return {
     props: {
       offices: offices

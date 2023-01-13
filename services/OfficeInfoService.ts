@@ -1,4 +1,4 @@
-import { IOffice } from "@/models/office";
+import { IOffice } from "../models/office";
 import puppeteer from "puppeteer";
 
 export const offices: IOffice[] = [
@@ -35,6 +35,8 @@ export const offices: IOffice[] = [
 ]
 
 export const updateInfo = async (): Promise<IOffice[]> => {
+    console.log("Init updating offices...");
+
     const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox"] });
     const officeBatches = await Promise.all(offices.map(async office => {
         const page = await browser.newPage();
@@ -70,5 +72,7 @@ export const updateInfo = async (): Promise<IOffice[]> => {
         };
     }));
 
+    await browser.close();
+    console.log("End updating offices", officeBatches);
     return officeBatches;
 }
