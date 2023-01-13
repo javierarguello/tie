@@ -31,7 +31,7 @@ const CommonSEO = (
 }
 
 export const PageSEO = ({ title, description }: { title: string; description: string; }) => {
-    const siteLogo = "mitie.png";
+    const siteLogo = "/mitie.png";
     const ogImageUrl = SITE_URL + siteLogo;
     const twImageUrl = SITE_URL + siteLogo;
     return (
