@@ -28,7 +28,7 @@ export default function Home({ offices }: { offices: IOffice[] }) {
       <main className={`flex flex-col ${poppins.className} m-5 text-sm items-center md:px-10 px-5 space-y-4`}>
         <div className="flex flex-row items-start justify-left space-x-4">
           <div className="min-w-[60px]">
-            <Image src="/mitie.png" alt="Mi TIE" width={120} height={14} />
+            <Image src="mitie.png" alt="Mi TIE" width={120} height={14} />
           </div>
           <div className={`text-3xl font-bold ${poppinsStrong.className}`}>Información de tu TIE</div>
         </div>
