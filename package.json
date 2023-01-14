@@ -9,7 +9,7 @@
         "lint": "next lint",
         "build:scripts": "npx tsc scripts/updateOffices.ts --outDir .dist --moduleResolution node --esModuleInterop true --target es2015 --module commonjs",
         "build": "npm run pre-build && node .dist/scripts/updateOffices.js",
-        "export": "next export"
+        "export": "next export && cp CNAME out"
     },
     "dependencies": {
         "@next/font": "13.1.2",
