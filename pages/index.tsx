@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export default function Home({ offices }: { offices: IOffice[] }) {
   return (
     <>
-      <PageSEO title="Mi TIE" description="Información del estado de entrega de TIE en comisarías de españa" />
+      <PageSEO title="Mi TIE" description="Información del estado de entrega de TIE en comisarías de España" />
       <main className={`flex flex-col ${poppins.className} m-5 text-sm items-center md:px-10 px-5 space-y-4`}>
         <div className="flex flex-row items-start justify-left space-x-4">
           <div className="min-w-[60px]">
@@ -32,7 +32,7 @@ export default function Home({ offices }: { offices: IOffice[] }) {
           </div>
           <div className={`text-3xl font-bold ${poppinsStrong.className}`}>Información de tu TIE</div>
         </div>
-        <div className="text-gray-700">Consulta aquí los últimos lotes para recoger tu TIE en las comisarías de españa</div>
+        <div className="text-gray-700">Consulta aquí los últimos lotes para recoger tu TIE en las comisarías de España</div>
         <HorizontalRule />
         <div className="flex flex-col items-start w-full">
           {offices.map(office =>
