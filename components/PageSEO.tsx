@@ -26,6 +26,7 @@ const CommonSEO = (
                 rel="canonical"
                 href={canonicalUrl ? canonicalUrl : `${SITE_URL}${router.asPath}`}
             />
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9882318829765955" crossOrigin="anonymous"></script>
         </Head>
     )
 }
