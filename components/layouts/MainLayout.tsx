@@ -12,18 +12,20 @@ export default function MainLayout({ children }: { children: JSX.Element }) {
         <>
             <PageSEO title="Mi TIE" description="Información del estado de entrega de TIE en comisarías de España" />
             <main className={`flex flex-col ${poppins.className} m-5 text-sm items-center md:px-10 px-5 space-y-4`}>
-                <div className="flex flex-row items-start justify-left space-x-4">
-                    <Link href={"/"}>
-                        <div className="min-w-[60px]">
+                <div className="max-w-5xl flex flex-col items-center space-y-6">
+                    <div className="flex flex-row items-start justify-left space-x-4">
+                        <Link href={"/"}>
+                            <div className="min-w-[60px]">
 
-                            <Image src="/mitie.png" alt="Mi TIE" width={120} height={14} />
-                        </div>
-                    </Link>
-                    <div className={`text-3xl font-bold ${poppinsStrong.className}`}>Información de tu TIE</div>
+                                <Image src="/mitie.png" alt="Mi TIE" width={120} height={14} />
+                            </div>
+                        </Link>
+                        <div className={`text-3xl font-bold ${poppinsStrong.className}`}>Información de tu TIE</div>
+                    </div>
+                    <div className="text-gray-700">Consulta aquí los últimos lotes para recoger tu TIE en las comisarías de España</div>
+                    <HorizontalRule />
+                    {children}
                 </div>
-                <div className="text-gray-700">Consulta aquí los últimos lotes para recoger tu TIE en las comisarías de España</div>
-                <HorizontalRule />
-                {children}
             </main>
         </>
     )
