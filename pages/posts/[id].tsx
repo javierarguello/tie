@@ -1,7 +1,8 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import React from 'react'
-import { postId2Tile } from "@/utils/utils";
+import { ArrowLeftCircleIcon } from "@heroicons/react/24/outline";
 import { getPostsList, getPostContent, getPostEntryById } from "../../services/PostsService";
+import Link from "next/link";
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await getPostsList()
@@ -27,10 +28,21 @@ export const getStaticProps: GetStaticProps = async (context) => {
 const Post = ({ id, name, htmlContent }: { id: string; name: string; htmlContent: string; }) => {
     return (
         <div>
-            <div className="text-2xl font-extrabold">{name}</div>
+            <div className="flex flex-row space-x-2 items-center">
+                <Link href="/">
+                    <ArrowLeftCircleIcon className="h-10" />
+                </Link>
+                <div className="text-2xl font-extrabold">{name}</div>
+            </div>
             <div className="leading-10"
                 dangerouslySetInnerHTML={{ __html: htmlContent }}
             />
+            <div className="mt-4 flex flex-row space-x-2 items-center">
+                <Link href="/">
+                    <ArrowLeftCircleIcon className="h-10" />
+                </Link>
+                <span>Volver</span>
+            </div>
         </div>
     )
 }
