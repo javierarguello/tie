@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 export default function Offices({ offices }: { offices: IOffice[] }) {
-  const pageTitle = "Consulta los últimos Lotes de TIE";
+  const pageTitle = "Mi TIE - Consulta los últimos Lotes de TIE";
   const description = "Últimos Lotes de TIE"
   return (
     <>
