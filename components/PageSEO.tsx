@@ -11,12 +11,12 @@ const CommonSEO = (
         <Head>
             <title>{title}</title>
             <meta name="robots" content="follow, index" />
-            <meta name="description" content={description} />
+            <meta name="description" content={description} key="description" />
             <meta property="og:url" content={`${SITE_URL}${router.asPath}`} />
             <meta property="og:type" content={ogType} />
             <meta property="og:site_name" content="Mi TIE" />
-            <meta property="og:description" content={description} />
-            <meta property="og:title" content={title} />
+            <meta property="og:description" content={description} key="og:description" />
+            <meta property="og:title" content={title} key="og:title" />
             <meta property="og:image" content={ogImage} key={ogImage} />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={title} />
