@@ -10,6 +10,7 @@ const CommonSEO = (
     return (
         <Head>
             <title>{title}</title>
+            <meta property="title" content={title} key="title" />
             <meta name="robots" content="follow, index" />
             <meta name="description" content={description} key="description" />
             <meta property="og:url" content={`${SITE_URL}${router.asPath}`} />

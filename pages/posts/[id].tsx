@@ -28,12 +28,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 const Post = ({ name, description, htmlContent }: { id: string; name: string; description: string; htmlContent: string; }) => {
+    const pageTitle = `MI TIE - ${name}`;
     return (
         <>
             <Head>
+                <title>{pageTitle}</title>
                 <meta name="description" content={description} key="description" />
                 <meta property="og:description" content={description} key="og:description" />
-                <meta property="og:title" content={`MI TIE - ${name}`} key="og:title" />
+                <meta property="og:title" content={pageTitle} key="og:title" />
+                <meta property="title" content={pageTitle} key="title" />
             </Head>
             <div>
                 <div className="flex flex-row space-x-2 items-center">
