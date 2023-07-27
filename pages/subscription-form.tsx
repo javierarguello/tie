@@ -36,7 +36,7 @@ export default function SubscriptionPage() {
                         type="button"
                         className="bg-blue-400 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
                     >
-                        <a href="https://buy.stripe.com/eVa2aX5k59ricucdQQ">
+                        <a href="https://buy.stripe.com/eVa2aX5k59ricucdQQ" target="_blank">
                             Subscribirme por 0.99€
                         </a>
                     </button>
