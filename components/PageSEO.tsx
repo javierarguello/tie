@@ -23,9 +23,6 @@ const CommonSEO = (
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content={twImage} />
-            <meta
-                http-equiv="Content-Security-Policy"
-                content="default-src 'self'; img-src https://*; child-src 'none'; content-src https://*.stripe.com; script-src https://*.stripe.com;" />
             <link
                 rel="canonical"
                 href={canonicalUrl ? canonicalUrl : `${SITE_URL}${router.asPath}`}

@@ -23,25 +23,19 @@ export default function SubscriptionPage() {
                 <meta property="og:description" content={description} key="og:description" />
                 <meta property="og:title" content={pageTitle} key="og:title" />
                 <meta property="title" content={pageTitle} key="title" />
-                <meta
-                    http-equiv="Content-Security-Policy"
-                    content="default-src 'self'; img-src https://*; child-src 'none'; content-src https://*.stripe.com; script-src https://*.stripe.com;" />
             </Head>
 
-            <div className="flex flex-col items-start w-full space-y-4">
+            <div className="flex flex-col items-start w-full space-y-8">
                 <div className="flex-col space-y-3 text-gray-700 text-center w-full">
                     <div>Aquí te podrás susbcribir a nuestro servicio de avisos por WhatsApp, este servicio es Pago.</div>
-                    <div>Asegúrate que tus datos sean correctos y revisa nuestros <Link className="text-blue-700 underline" href="./tc">Términos y Condiciones.</Link></div>
+                    <div>Asegúrate de revisar nuestros <Link className="text-blue-700 underline" href="./tc">Términos y Condiciones.</Link></div>
                 </div>
-                <div className="w-full">
-                    <button
-                        type="button"
-                        className="bg-blue-400 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
-                    >
-                        <a href="https://buy.stripe.com/eVa2aX5k59ricucdQQ" target="_blank">
-                            Subscribirme por 0.99€
-                        </a>
-                    </button>
+                <div className="w-full text-center">
+
+                    <a className="bg-blue-400 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" href="https://buy.stripe.com/eVa2aX5k59ricucdQQ" target="_blank">
+                        Subscribirme por 0.99€
+                    </a>
+
                 </div>
                 <div className="w-full text-center">
                     Escríbemos a <a className="text-blue-700 underline" href="mailto:soporte@mi-tie.es">soporte@mi-tie.es</a> por cualquier duda.
