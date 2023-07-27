@@ -23,6 +23,7 @@ export default function SubscriptionPage() {
                 <meta property="og:description" content={description} key="og:description" />
                 <meta property="og:title" content={pageTitle} key="og:title" />
                 <meta property="title" content={pageTitle} key="title" />
+                <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://buy.stripe.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;**script-src 'self' https://buy.stripe.com 'unsafe-inline' 'unsafe-eval';** " />
             </Head>
 
             <div className="flex flex-col items-start w-full space-y-4">
