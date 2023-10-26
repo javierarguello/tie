@@ -54,27 +54,25 @@ export const updateInfo = async (): Promise<IOffice[]> => {
 
       await page.goto(office.url)
 
-      const extractedText = await page.$eval("*", (el) => el.textContent)
+      // const extractedText = await page.$eval("*", (el) => el.textContent)
 
-      const allMatches: string[] = await page.evaluate(() => {
-        const elements = document.querySelectorAll("*")
-        const textArray: string[] = []
-
-        elements.forEach((element: Element) => {
-          const elementText = element.textContent?.trim()
-          if (elementText && elementText.length > 0) {
-            const matches = elementText
-              .toUpperCase()
-              .match(/LOTE NIE.*?(\d{4}\/\d{3,4})/)
-
-            if (matches != null && matches.length > 1) {
-              textArray.push(matches[1])
-            }
+      const allText: string[] = await page.evaluate(() => {
+        const elements = document.querySelectorAll(
+          ".the-content :not(#rank-math-faq)"
+        )
+        const results: string[] = []
+        elements.forEach((element) => {
+          if (
+            element.textContent != null &&
+            element.closest("#rank-math-faq") == null
+          ) {
+            results.push(element.textContent)
           }
         })
-
-        return textArray
+        return results
       })
+
+      const allMatches = allText.join(" ").match(/(20\d{2}\/\d{3,4})/g)
 
       if (allMatches != null && allMatches.length > 0) {
         const allBatches = allMatches
@@ -95,6 +93,7 @@ export const updateInfo = async (): Promise<IOffice[]> => {
           .sort((a, b) => b.sortKey - a.sortKey)
 
         const currentBatch = allBatches?.at(0)
+
         return {
           ...office,
           currentBatch: currentBatch ?? null,
