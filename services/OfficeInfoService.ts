@@ -15,6 +15,12 @@ export const offices: IOffice[] = [
       "https://www.google.com/maps/place/Comisar%C3%ADa+Polic%C3%ADa+Nacional+de+Latina/@40.38283,-3.7601366,17z/data=!3m1!4b1!4m5!3m4!1s0xd418841c3114915:0x7dfec4eb3d964e64!8m2!3d40.38283!4d-3.7575617",
   },
   {
+    name: "Santa Engracia Madrid",
+    url: "https://webparainmigrantes.com/extranjeria-santa-engracia-lote-nie",
+    location:
+      "https://www.google.com/maps/place/Calle+de+Sta+Engracia,+18,+28010+Madrid/data=!4m2!3m1!1s0xd42288c454a871f:0x5adb4c735cf57aca?sa=X&ved=2ahUKEwiCn-S-l7eCAxWpSfEDHacOCgkQ8gF6BAggEAA",
+  },
+  {
     name: "Las Palmas Gran Canaria",
     url: "https://webparainmigrantes.com/numero-lote-nie-las-palmas",
     location:
