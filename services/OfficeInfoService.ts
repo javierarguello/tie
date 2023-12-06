@@ -87,8 +87,8 @@ export const updateInfo = async (): Promise<IOffice[]> => {
           .filter((m) => m[0]?.length >= 3 && m[1]?.length >= 3)
           .map((m) => {
             return {
-              year: parseInt(m[0].length > 3 ? m[0] : m[1]),
-              batch: parseInt(m[1].length > 3 ? m[0] : m[1]),
+              year: parseInt(m[0]),
+              batch: parseInt(m[1]),
               updatedAt: Date.now(),
             }
           })
